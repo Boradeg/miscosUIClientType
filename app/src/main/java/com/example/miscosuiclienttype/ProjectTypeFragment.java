@@ -3,6 +3,8 @@ package com.example.miscosuiclienttype;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +62,19 @@ public class ProjectTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_project_type, container, false);
+    }
+    public void replaceFragment(Fragment fragment) {
+        // Get the FragmentManager
+        FragmentManager fragmentManager = getParentFragmentManager();
+
+        // Begin a FragmentTransaction
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        // Replace the current fragment with the new one
+        transaction.replace(R.id.fragment_container, fragment);
+
+
+        // Commit the transaction
+        transaction.commit();
     }
 }

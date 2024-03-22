@@ -45,6 +45,14 @@ public class AttributeFragment extends Fragment {
                 attributeAdapter.notifyDataSetChanged();
             }
         });
+        binding.dropDownForClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new ClientTypeFragment());
+
+            }
+        });
+
         binding.idCreateNewProjectType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
