@@ -1,4 +1,4 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.AdapterClass;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.miscosuiclienttype.ModalDataClass.AttributeModalClass;
+import com.example.miscosuiclienttype.R;
 
 import java.util.List;
 

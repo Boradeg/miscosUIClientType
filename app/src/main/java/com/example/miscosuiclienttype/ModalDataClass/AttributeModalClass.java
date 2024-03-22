@@ -1,4 +1,4 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.ModalDataClass;
 
 
 public class AttributeModalClass {

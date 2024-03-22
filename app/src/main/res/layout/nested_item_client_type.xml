@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Grocery and Stationary"
             android:textColor="@color/black"
+            android:fontFamily="@font/roboto_regular"
             android:layout_centerVertical="true"
             android:textSize="@dimen/_10sdp" />
 

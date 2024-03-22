@@ -1,4 +1,4 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.Fragment;
 
 import android.os.Bundle;
 
@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.miscosuiclienttype.ModalDataClass.DataClassExpandedRV;
+import com.example.miscosuiclienttype.AdapterClass.ItemAdapterExpandedRV;
+import com.example.miscosuiclienttype.R;
 import com.example.miscosuiclienttype.databinding.FragmentClientTypeBinding;
 
 import java.util.ArrayList;
@@ -20,8 +23,8 @@ import java.util.List;
 public class ClientTypeFragment extends Fragment {
 
 
-    private List<DataModel> mList;
-    private ItemAdapter adapter;
+    private List<DataClassExpandedRV> mList;
+    private ItemAdapterExpandedRV adapter;
     private FragmentClientTypeBinding binding;
 
     @Override
@@ -67,11 +70,11 @@ public class ClientTypeFragment extends Fragment {
         items.add("Drone Survey");
         items.add("MMRDA Daund");
 
-        mList.add(new DataModel(nestedList1 , items.get(0)));
-        mList.add(new DataModel( nestedList2, items.get(1)));
-        mList.add(new DataModel( nestedList3, items.get(2)));
+        mList.add(new DataClassExpandedRV(nestedList1 , items.get(0)));
+        mList.add(new DataClassExpandedRV( nestedList2, items.get(1)));
+        mList.add(new DataClassExpandedRV( nestedList3, items.get(2)));
 
-        adapter = new ItemAdapter(mList);
+        adapter = new ItemAdapterExpandedRV(mList);
         binding.mainRecyclerview.setAdapter(adapter);
         return binding.getRoot();
     }

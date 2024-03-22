@@ -1,15 +1,15 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.ModalDataClass;
 
 
 import java.util.List;
 
-public class DataModel {
+public class DataClassExpandedRV {
 
     private final List<String> nestedList;
     private final String itemText;
     private boolean isExpandable;
 
-    public DataModel(List<String> itemList, String itemText) {
+    public DataClassExpandedRV(List<String> itemList, String itemText) {
         this.nestedList = itemList;
         this.itemText = itemText;
         isExpandable = false;

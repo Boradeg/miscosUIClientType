@@ -1,4 +1,4 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.AdapterClass;
 
 
 import android.view.LayoutInflater;
@@ -13,15 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.miscosuiclienttype.ModalDataClass.DataClassExpandedRV;
+import com.example.miscosuiclienttype.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
+public class ItemAdapterExpandedRV extends RecyclerView.Adapter<ItemAdapterExpandedRV.ItemViewHolder> {
 
-    private List<DataModel> mList;
+    private List<DataClassExpandedRV> mList;
     private List<String> list = new ArrayList<>();
 
-    public ItemAdapter(List<DataModel> mList) {
+    public ItemAdapterExpandedRV(List<DataClassExpandedRV> mList) {
         this.mList = mList;
     }
 
@@ -35,7 +38,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
 
-        DataModel model = mList.get(position);
+        DataClassExpandedRV model = mList.get(position);
         holder.mTextView.setText(model.getItemText());
 
         boolean isExpandable = model.isExpandable();
@@ -47,7 +50,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             holder.mArrowImage.setImageResource(R.drawable.down_arrow);
         }
 
-        NestedAdapter adapter = new NestedAdapter(list);
+        NestedAdapterExpandedRV adapter = new NestedAdapterExpandedRV(list);
         holder.nestedRecyclerView.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
         holder.nestedRecyclerView.setHasFixedSize(true);
         holder.nestedRecyclerView.setAdapter(adapter);

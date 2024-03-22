@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ClientTypeFragment"
-    >
+    tools:context=".Fragment.ClientTypeFragment">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -44,12 +44,12 @@
                 app:queryHint="Search by" />
 
         </RelativeLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_recyclerview"
-            android:layout_below="@id/searchViewLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="20dp"
-            />
+            android:layout_below="@id/searchViewLayout"
+            android:layout_marginBottom="20dp" />
     </RelativeLayout>
 </FrameLayout>

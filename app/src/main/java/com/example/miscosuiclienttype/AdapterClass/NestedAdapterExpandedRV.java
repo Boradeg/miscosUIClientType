@@ -1,4 +1,4 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.AdapterClass;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,13 +8,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.miscosuiclienttype.R;
+
 import java.util.List;
 
-public class NestedAdapter extends RecyclerView.Adapter<NestedAdapter.NestedViewHolder> {
+public class NestedAdapterExpandedRV extends RecyclerView.Adapter<NestedAdapterExpandedRV.NestedViewHolder> {
 
     private List<String> mList;
 
-    public NestedAdapter(List<String> mList){
+    public NestedAdapterExpandedRV(List<String> mList){
         this.mList = mList;
     }
     @NonNull

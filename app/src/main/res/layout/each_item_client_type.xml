@@ -17,14 +17,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="7dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="7dp">
 
             <RelativeLayout
                 android:id="@+id/relative_layout_each_item"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               >
+                android:layout_height="wrap_content">
 
 
                 <TextView
@@ -39,7 +38,6 @@
                     android:textSize="@dimen/_10sdp"
 
                     />
-
 
 
                 <ImageView
@@ -74,14 +72,15 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_below="@+id/relative_layout_each_item"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative_layout_each_item">
+
                 <TextView
                     android:id="@+id/project_status_ongoing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
                     android:fontFamily="@font/roboto_medium"
                     android:text="On going project type : 4"
                     android:textColor="@color/grey_60"
@@ -103,5 +102,6 @@
                 android:layout_height="wrap_content" />
         </RelativeLayout>
     </LinearLayout>
+
 
 </RelativeLayout>

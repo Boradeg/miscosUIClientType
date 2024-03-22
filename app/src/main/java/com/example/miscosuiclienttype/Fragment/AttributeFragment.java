@@ -1,4 +1,4 @@
-package com.example.miscosuiclienttype;
+package com.example.miscosuiclienttype.Fragment;
 
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -13,7 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.miscosuiclienttype.databinding.FragmentListBinding;
+import com.example.miscosuiclienttype.AdapterClass.AttributeAdapter;
+import com.example.miscosuiclienttype.ModalDataClass.AttributeModalClass;
+import com.example.miscosuiclienttype.R;
+import com.example.miscosuiclienttype.Fragment.AttributeFragment;
+import com.example.miscosuiclienttype.databinding.FragmentAttributeBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,16 +26,18 @@ public class AttributeFragment extends Fragment {
     private AttributeAdapter attributeAdapter;
 
     private List<AttributeModalClass> attributeList;
-    private FragmentListBinding binding;
+    private FragmentAttributeBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Initialize attributeList
+
         attributeList = new ArrayList<>();
 
+
         // Inflate the layout for this fragment
-        binding = FragmentListBinding.inflate(inflater, container, false);
+        binding = FragmentAttributeBinding.inflate(inflater, container, false);
 
         binding.idCreateNewProjectType.setText("Create New Project Type");
         binding.idCreateNewProjectType.setPaintFlags(binding.idCreateNewProjectType.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -48,7 +54,7 @@ public class AttributeFragment extends Fragment {
         binding.dropDownForClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new ClientTypeFragment());
+                replaceFragment(new ClientTypeFragment(),true);
 
             }
         });
@@ -58,7 +64,7 @@ public class AttributeFragment extends Fragment {
             public void onClick(View v) {
                 // Create an instance of the new fragment
                 ProjectTypeFragment projectTypeFragment = new ProjectTypeFragment();
-                replaceFragment(projectTypeFragment);
+                replaceFragment(projectTypeFragment,true);
 
 
             }
@@ -71,7 +77,7 @@ public class AttributeFragment extends Fragment {
         binding.recyclerViewForAttribute.setLayoutManager(new LinearLayoutManager(getContext()));
         return binding.getRoot();
     }
-    public void replaceFragment(Fragment fragment) {
+    public void replaceFragment(Fragment fragment, boolean addToBackStack) {
         // Get the FragmentManager
         FragmentManager fragmentManager = getParentFragmentManager();
 
@@ -81,12 +87,14 @@ public class AttributeFragment extends Fragment {
         // Replace the current fragment with the new one
         transaction.replace(R.id.fragment_container, fragment);
 
+        // Add transaction to back stack if specified
+        if (addToBackStack) {
+            transaction.addToBackStack(null);
+        }
 
         // Commit the transaction
         transaction.commit();
     }
-    public void test() {
-        Toast.makeText(requireContext(), "vcx", Toast.LENGTH_SHORT).show();
-    }
+
 
 }
