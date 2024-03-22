@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">miscosUIClientType</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="LOALOI">LOA/LOI</string>
+    <string name="LOA">LOA</string>
+    <string name="LOI">LOI</string>
+</resources>
